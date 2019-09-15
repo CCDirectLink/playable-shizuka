@@ -1,0 +1,5 @@
+{
+	"name": "playable-shizuka",
+	"desciption": "Playable Shizuka",
+	"prestart": "mod.js"
+}

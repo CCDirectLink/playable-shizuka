@@ -1,0 +1,29 @@
+[{
+	"type": "ENTER",
+	"index": "namedSheets"
+}, {
+	"type": "SET_KEY",
+	"index": "solarFistClone",
+	"content": {
+		"src": "media/entity/npc/captain-shizuka.png",
+		"width": 32,
+		"height": 40,
+		"offX": 384,
+		"offY": 0,
+		"xCount": 4
+	}
+},{
+	"type": "EXIT"
+},{
+	"type": "ENTER",
+	"index": ["SUB", 3, "SUB"]
+}, {
+	"type": "ADD_ARRAY_ELEMENT",
+	"content": {
+		"sheet": "solarFistClone",
+		"name": "solarFistHoldLeazuka",
+		"time": 0.05,
+		"repeat": true,
+		"frames": [16,17,18]
+	}
+}]

@@ -1,0 +1,45 @@
+[{
+	"type": "INCLUDE",
+	"src": "game:data/animations/player.json"
+}, {
+	"type": "ENTER",
+	"index": "namedSheets"
+},{
+	"type": "FOR_IN",
+	"keyword": "VALUE",
+	"values": [
+		"walk",
+		"walk2",
+		"walk3",
+		"poses",
+		"itemPoses",
+		"idlePoses"
+	],
+	"body": [{
+		"type": "ENTER",
+		"index": "VALUE"
+	},{
+		"type": "SET_KEY",
+		"index": "src",
+		"content": "media/entity/player/shizuka/move.png"
+	}, {
+		"type": "EXIT"
+	}]
+},{
+	"type": "FOR_IN",
+	"keyword": "VALUE",
+	"values": [
+		"throw",
+		"special"
+	],
+	"body": [{
+		"type": "ENTER",
+		"index": "VALUE"
+	},{
+		"type": "SET_KEY",
+		"index": "src",
+		"content": "media/entity/player/shizuka/throw.png"
+	}, {
+		"type": "EXIT"
+	}]
+}]

@@ -1,0 +1,12 @@
+[{
+	"type": "INCLUDE",
+	"src": "game:data/players/lea.json"
+}, {
+	"type": "SET_KEY",
+	"index": "character",
+	"content": "main.leazuka"
+}, {
+	"type": "SET_KEY",
+	"index": "sheet",
+	"content": "player-shizuka"
+}]

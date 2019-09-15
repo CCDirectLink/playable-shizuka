@@ -1,0 +1,29 @@
+[{
+	"type": "INCLUDE",
+	"src": "game:data/animations/player-hugging.json"
+}, {
+	"type": "ENTER",
+	"index": ["namedSheets"]
+}, {
+	"type": "FOR_IN",
+	"keyword": "VALUE",
+	"values": [
+		"schneider1",
+		"schneider2",
+		"schneider3",
+		"emilie1",
+		"ctron1",
+		"apollo1",
+		"mixed"
+	],
+	"body": [{
+		"type": "ENTER",
+		"index": "VALUE"
+	},{
+		"type": "SET_KEY",
+		"index": "src",
+		"content":  "media/entity/player/shizuka/hugging.png"
+	}, {
+		"type": "EXIT"
+	}]
+}]

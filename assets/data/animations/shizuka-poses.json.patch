@@ -1,0 +1,31 @@
+[{
+	"type": "INCLUDE",
+	"src": "game:data/animations/player-poses.json"
+}, {
+	"type": "ENTER",
+	"index": "namedSheets"
+},{
+	"type": "FOR_IN",
+	"values": [
+		"poses",
+		"poses4dir",
+		"sideWalk",
+		"sidePoses",
+		"sidePoses2",
+		"sleepPoses",
+		"sleepPoses2",
+		"drill",
+		"drillSide"
+	],
+	"keyword": "VALUE",
+	"body": [{
+		"type": "ENTER",
+		"index": "VALUE"
+	}, {
+		"type": "SET_KEY",
+		"index": "src",
+		"content": "media/entity/player/shizuka/poses.png"
+	},{
+		"type": "EXIT"
+	}]
+}]

@@ -1,0 +1,11 @@
+[{
+	"type": "INCLUDE",
+	"src": "game:data/animations/player-poses-debug.json"
+}, {
+	"type": "ENTER",
+	"index": ["namedSheets", "debug"]
+},{
+	"type": "SET_KEY",
+	"index": "src",
+	"content": "media/entity/player/shizuka/poses-debug.png"
+}]
