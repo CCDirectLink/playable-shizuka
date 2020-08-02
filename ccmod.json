@@ -3,5 +3,8 @@
 	"description": {
 		"en_US": "Playable Shizuka"
 	},
-	"prestart": "mod.js"
+	"prestart": "mod.js",
+	"dependencies": {
+		"dynamic-json": "1.x.x"
+	}
 }
