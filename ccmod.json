@@ -1,0 +1,7 @@
+{
+	"id": "playable-shizuka",
+	"description": {
+		"en_US": "Playable Shizuka"
+	},
+	"prestart": "mod.js"
+}
