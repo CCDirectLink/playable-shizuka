@@ -30,7 +30,7 @@ export default class PlayableShizukaMod {
             return playerData;
         });
 
-        DynamicJson.forRegExpUrl('data/animations/shizuka-hugging.json', async function() {
+        DynamicJson.forExactUrl('data/animations/shizuka-hugging.json', async function() {
             const playerData = await fetch('data/animations/player-hugging.json');
             const values = [
                 "schneider1",
@@ -48,7 +48,7 @@ export default class PlayableShizukaMod {
             return playerData;
         });
 
-        DynamicJson.forRegExpUrl('data/animations/shizuka-poses.json', async function() {
+        DynamicJson.forExactUrl('data/animations/shizuka-poses.json', async function() {
             const playerData = await fetch('data/animations/player-poses.json');
             const values = [
                 "poses",
@@ -68,7 +68,7 @@ export default class PlayableShizukaMod {
             return playerData;
         });
 
-        DynamicJson.forRegExpUrl('data/animations/shizuka-poses-debug.json', async function() {
+        DynamicJson.forExactUrl('data/animations/shizuka-poses-debug.json', async function() {
             const playerData = await fetch('data/animations/player-poses-debug.json');
 
             playerData.namedSheets.debug = 'media/entity/player/shizuka/poses-debug.png';
@@ -76,13 +76,52 @@ export default class PlayableShizukaMod {
             return playerData;
         });
 
-        DynamicJson.forRegExpUrl('data/animations/shizuka-weak.json', async function() {
+        DynamicJson.forExactUrl('data/animations/shizuka-weak.json', async function() {
             const playerData = await fetch('data/animations/player-poses.json');
 
             playerData.namedSheets.walk = 'media/entity/player/shizuka/move-weak.png';
             
             return playerData;
         });
+
+        DynamicJson.forExactUrl('data/characters/main/leazuka.json', async function() {
+            const playerData = await fetch('data/characters/main/lea.json');
+
+            playerData.name = {
+                "en_US": "Leazuka",
+                "de_DE": "Leazuka",
+                "zh_CN": "Leazuka",
+                "ja_JP": "Leazuka",
+                "ko_KR": "Leazuka",
+                "langUid": 1
+            };
+
+            playerData.animSheet = 'player-shizuka';
+
+            playerData.face.src = 'leazuka.png';
+
+            const subTypes = [
+                'panic',
+                'hand',
+                'special'
+            ];
+
+            for (const subType of subTypes) {
+                playerData.face.subImages[subType] = `leazuka-${subType}.png`;
+            }
+            
+            return playerData;
+        });
+
+        DynamicJson.forExactUrl('data/players/leazuka.json', async function() {
+            const playerData = await fetch('data/players/lea.json');
+
+            playerData.character = 'main.leazuka';
+            playerData.sheet = 'player-shizuka';
+            
+            return playerData;
+        });
+
     }
 
 }
