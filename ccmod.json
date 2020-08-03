@@ -4,6 +4,7 @@
 		"en_US": "Playable Shizuka"
 	},
 	"prestart": "mod.js",
+	"registerDynamicJsonGenerators": "djson-register.js",
 	"dependencies": {
 		"dynamic-json": "1.x.x"
 	}
