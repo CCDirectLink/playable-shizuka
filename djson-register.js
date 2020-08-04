@@ -1,5 +1,7 @@
-ccmod.resources.jsonGenerators.add('data/animations/player-shizuka.json', async () => {
-    const playerData = await ccmod.resources.loadJSON('data/animations/player.json');
+const { resources } = ccmod;
+
+resources.jsonGenerators.add('data/animations/player-shizuka.json', async () => {
+    const playerData = await resources.loadJSON('data/animations/player.json');
     const values = [
         "walk",
         "walk2",
@@ -24,8 +26,8 @@ ccmod.resources.jsonGenerators.add('data/animations/player-shizuka.json', async 
     return playerData;
 });
 
-ccmod.resources.jsonGenerators.add('data/animations/shizuka-hugging.json', async () => {
-    const playerData = await ccmod.resources.loadJSON('data/animations/player-hugging.json');
+resources.jsonGenerators.add('data/animations/shizuka-hugging.json', async () => {
+    const playerData = await resources.loadJSON('data/animations/player-hugging.json');
     const values = [
         "schneider1",
         "schneider2",
@@ -43,8 +45,8 @@ ccmod.resources.jsonGenerators.add('data/animations/shizuka-hugging.json', async
     return playerData;
 });
 
-ccmod.resources.jsonGenerators.add('data/animations/shizuka-poses.json', async () => {
-    const playerData = await ccmod.resources.loadJSON('data/animations/player-poses.json');
+resources.jsonGenerators.add('data/animations/shizuka-poses.json', async () => {
+    const playerData = await resources.loadJSON('data/animations/player-poses.json');
     const values = [
         "poses",
         "poses4dir",
@@ -63,15 +65,15 @@ ccmod.resources.jsonGenerators.add('data/animations/shizuka-poses.json', async (
     return playerData;
 });
 
-ccmod.resources.jsonGenerators.add('data/animations/shizuka-poses-debug.json', async () => {
-    const playerData = await ccmod.resources.loadJSON('data/animations/player-poses-debug.json');
+resources.jsonGenerators.add('data/animations/shizuka-poses-debug.json', async () => {
+    const playerData = await resources.loadJSON('data/animations/player-poses-debug.json');
 
     playerData.namedSheets.debug = 'media/entity/player/shizuka/poses-debug.png';
 
     return playerData;
 });
 
-ccmod.resources.jsonGenerators.add('data/animations/shizuka-weak.json', async () => {
+resources.jsonGenerators.add('data/animations/shizuka-weak.json', async () => {
     const playerData = await fetch('data/animations/player-poses.json');
 
     playerData.namedSheets.walk = 'media/entity/player/shizuka/move-weak.png';
@@ -79,8 +81,8 @@ ccmod.resources.jsonGenerators.add('data/animations/shizuka-weak.json', async ()
     return playerData;
 });
 
-ccmod.resources.jsonGenerators.add('data/characters/main/leazuka.json', async () => {
-    const playerData = await ccmod.resources.loadJSON('data/characters/main/lea.json');
+resources.jsonGenerators.add('data/characters/main/leazuka.json', async () => {
+    const playerData = await resources.loadJSON('data/characters/main/lea.json');
 
     playerData.name = {
         "en_US": "Leazuka",
@@ -108,8 +110,8 @@ ccmod.resources.jsonGenerators.add('data/characters/main/leazuka.json', async ()
     return playerData;
 });
 
-ccmod.resources.jsonGenerators.add('data/players/leazuka.json', async () => {
-    const playerData = await ccmod.resources.loadJSON('data/players/lea.json');
+resources.jsonGenerators.add('data/players/leazuka.json', async () => {
+    const playerData = await resources.loadJSON('data/players/lea.json');
 
     playerData.character = 'main.leazuka';
     playerData.sheet = 'player-shizuka';
