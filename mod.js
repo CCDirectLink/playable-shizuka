@@ -1,3 +1,5 @@
+import './djson-register.js';
+
 function hookMenuLea() {
 	return {
 		shizukaSkinGfx: new ig.Image("media/gui/menu-shizuka.png"),
@@ -34,7 +36,7 @@ function hookMessages() {
 					a.person.person = "main.leazuka";
 				}
 			}
-			this.parent(a);	
+			this.parent(a);
 		}
 	};
 }
@@ -68,10 +70,10 @@ function hookShowExternAnim() {
 				} else {
 					console.log('Not a mapping', a.anim.sheet);
 				}
-				
+
 
 			}
-			this.parent(a);	
+			this.parent(a);
 		}
 	};
 }
@@ -84,7 +86,7 @@ function hookShowAnim() {
 		init(a){
 			if(a.anim && a.anim.includes("Lea")) {
 				debugger;
-			}			
+			}
 			const sheetMapping = {
 				"solarFistHoldLea": "solarFistHoldLeazuka"
 			};
@@ -97,10 +99,10 @@ function hookShowAnim() {
 				} else {
 					console.log('Not a mapping', a.anim);
 				}
-				
+
 
 			}
-			this.parent(a);	
+			this.parent(a);
 		}
 	};
 }

@@ -1,10 +1,7 @@
-console.log('I was called playable shizuka!');
-async function fetchAndJson(url) {
-    return await fetch(url).then(data => data.json());
-}
+const { resources } = ccmod;
 
-DynamicJson.forExactUrl('data/animations/player-shizuka.json', async function() {
-    const playerData = await fetchAndJson('data/animations/player.json');
+resources.jsonGenerators.add('data/animations/player-shizuka.json', async () => {
+    const playerData = await resources.loadJSON('data/animations/player.json');
     const values = [
         "walk",
         "walk2",
@@ -16,7 +13,7 @@ DynamicJson.forExactUrl('data/animations/player-shizuka.json', async function() 
     for (const value of values) {
         playerData.namedSheets[value].src = "media/entity/player/shizuka/move.png";
     }
-    
+
     const values2 = [
         "throw",
         "special"
@@ -29,8 +26,8 @@ DynamicJson.forExactUrl('data/animations/player-shizuka.json', async function() 
     return playerData;
 });
 
-DynamicJson.forExactUrl('data/animations/shizuka-hugging.json', async function() {
-    const playerData = await fetchAndJson('data/animations/player-hugging.json');
+resources.jsonGenerators.add('data/animations/shizuka-hugging.json', async () => {
+    const playerData = await resources.loadJSON('data/animations/player-hugging.json');
     const values = [
         "schneider1",
         "schneider2",
@@ -40,7 +37,7 @@ DynamicJson.forExactUrl('data/animations/shizuka-hugging.json', async function()
         "apollo1",
         "mixed"
     ];
-    
+
     for (const value of values) {
         playerData.namedSheets[value].src = "media/entity/player/shizuka/hugging.png";
     }
@@ -48,8 +45,8 @@ DynamicJson.forExactUrl('data/animations/shizuka-hugging.json', async function()
     return playerData;
 });
 
-DynamicJson.forExactUrl('data/animations/shizuka-poses.json', async function() {
-    const playerData = await fetchAndJson('data/animations/player-poses.json');
+resources.jsonGenerators.add('data/animations/shizuka-poses.json', async () => {
+    const playerData = await resources.loadJSON('data/animations/player-poses.json');
     const values = [
         "poses",
         "poses4dir",
@@ -64,28 +61,28 @@ DynamicJson.forExactUrl('data/animations/shizuka-poses.json', async function() {
     for (const value of values) {
         playerData.namedSheets[value].src = "media/entity/player/shizuka/poses.png";
     }
-    
+
     return playerData;
 });
 
-DynamicJson.forExactUrl('data/animations/shizuka-poses-debug.json', async function() {
-    const playerData = await fetchAndJson('data/animations/player-poses-debug.json');
+resources.jsonGenerators.add('data/animations/shizuka-poses-debug.json', async () => {
+    const playerData = await resources.loadJSON('data/animations/player-poses-debug.json');
 
     playerData.namedSheets.debug = 'media/entity/player/shizuka/poses-debug.png';
-    
+
     return playerData;
 });
 
-DynamicJson.forExactUrl('data/animations/shizuka-weak.json', async function() {
+resources.jsonGenerators.add('data/animations/shizuka-weak.json', async () => {
     const playerData = await fetch('data/animations/player-poses.json');
 
     playerData.namedSheets.walk = 'media/entity/player/shizuka/move-weak.png';
-    
+
     return playerData;
 });
 
-DynamicJson.forExactUrl('data/characters/main/leazuka.json', async function() {
-    const playerData = await fetchAndJson('data/characters/main/lea.json');
+resources.jsonGenerators.add('data/characters/main/leazuka.json', async () => {
+    const playerData = await resources.loadJSON('data/characters/main/lea.json');
 
     playerData.name = {
         "en_US": "Leazuka",
@@ -109,12 +106,12 @@ DynamicJson.forExactUrl('data/characters/main/leazuka.json', async function() {
     for (const subType of subTypes) {
         playerData.face.subImages[subType] = `leazuka-${subType}.png`;
     }
-    
+
     return playerData;
 });
 
-DynamicJson.forExactUrl('data/players/leazuka.json', async function() {
-    const playerData = await fetchAndJson('data/players/lea.json');
+resources.jsonGenerators.add('data/players/leazuka.json', async () => {
+    const playerData = await resources.loadJSON('data/players/lea.json');
 
     playerData.character = 'main.leazuka';
     playerData.sheet = 'player-shizuka';
